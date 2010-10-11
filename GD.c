@@ -341,9 +341,9 @@ img_from_xpm(klass, f)
     rb_io_check_readable(fptr);
 
     /* need cast, and the argument is char* type */
-    iptr = (gdImagePtr)gdImageCreateFromXpm(fptr->path);
+    iptr = (gdImagePtr)gdImageCreateFromXpm(fptr->pathv);
     if (!iptr)
-        rb_raise(rb_eArgError, "%s is not a valid XPM File", (char*)fptr->path);
+        rb_raise(rb_eArgError, "%s is not a valid XPM File", (char*)fptr->pathv);
 
     return Data_Wrap_Struct(klass,0,free_img,iptr);
 }
@@ -364,9 +364,9 @@ img_from_xpmfname(klass, fname)
     rb_io_check_readable(fptr);
 
     /* need cast, and the argument is char* type */
-    iptr = (gdImagePtr)gdImageCreateFromXpm(fptr->path);
+    iptr = (gdImagePtr)gdImageCreateFromXpm(fptr->pathv);
     if (!iptr)
-        rb_raise(rb_eArgError, "%s is not a valid XPM File", (char*)fptr->path);
+        rb_raise(rb_eArgError, "%s is not a valid XPM File", (char*)fptr->pathv);
                  
     return Data_Wrap_Struct(klass,0,free_img,iptr);
 }
@@ -2710,3 +2710,4 @@ Init_GD()
 #endif /* ENABLE_GD_2_0 */
 
 }
+
