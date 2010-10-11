@@ -14,7 +14,7 @@ After Installing
 
 Then try this
 
-ruby extconf.rb --with-xpm --with-ttf --with-freetype --with-jpeg  --enable-gd2_0
+# ruby extconf.rb --with-xpm --with-ttf --with-freetype --with-jpeg  --enable-gd2_0
  
 Then Do follwing steps
 # rake gem
